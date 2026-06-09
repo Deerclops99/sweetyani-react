@@ -1,0 +1,52 @@
+/* Reset básico */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Imágenes responsivas */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Contenedor general opcional */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   ESTRUCTURA GENERAL APP
+   Mantiene el footer abajo
+   ========================= */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   FONDO DE TODAS LAS PÁGINAS
+   (NO afecta Header ni Footer)
+   ========================= */
+
+.main-content {
+  flex: 1;
+  background-color: #FFF0F5; /* Rosa pastel claro */
+}
