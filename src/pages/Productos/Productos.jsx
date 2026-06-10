@@ -29,6 +29,7 @@ function Productos() {
            nombre={producto.Nombre}
            precio={producto.Precio}
            imagen={producto.Imagen}
+           descripcion={producto.Descripcion}
           />
     ))}
   </div>
