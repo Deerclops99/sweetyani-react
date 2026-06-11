@@ -9,6 +9,7 @@ import Regalos from "./pages/Regalos/Regalos";
 import Tortas from "./pages/Tortas/Tortas";
 import Combos from "./pages/Combos/Combos";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes/PreguntasFrecuentes";
+import Nosotros from "./pages/Nosotros/Nosotros";
 
 import Footer from './components/Footer/Footer';
 
@@ -30,7 +31,9 @@ function App() {
           <Route
             path="/preguntas-frecuentes"
             element={<PreguntasFrecuentes />}
+
           />
+          <Route path="/nosotros" element={<Nosotros />} />
         </Routes>
       </main>
 
