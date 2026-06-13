@@ -1,0 +1,22 @@
+.local {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.local h1 {
+  text-align: center;
+  color: #e75480;
+  margin-bottom: 30px;
+}
+
+.local-texto {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.local-texto strong {
+  color: #e75480;
+} 

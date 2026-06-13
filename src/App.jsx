@@ -10,6 +10,10 @@ import Tortas from "./pages/Tortas/Tortas";
 import Combos from "./pages/Combos/Combos";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes/PreguntasFrecuentes";
 import Nosotros from "./pages/Nosotros/Nosotros";
+import Local from "./pages/Local/Local";
+import TerminosyCondiciones from "./pages/TerminosyCondiciones/TerminosyCondiciones";
+import PedidosySena from "./pages/PedidosySena/PedidosySena";
+import TrabajaconNosotros from "./pages/TrabajaconNosotros/TrabajaconNosotros";
 
 import Footer from './components/Footer/Footer';
 
@@ -34,6 +38,10 @@ function App() {
 
           />
           <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/local" element={<Local />} />
+          <Route path="/terminos" element={<TerminosyCondiciones />} />
+          <Route path="/pedidos" element={<PedidosySena />} />
+          <Route path="/trabaja" element={<TrabajaconNosotros />} />
         </Routes>
       </main>
 

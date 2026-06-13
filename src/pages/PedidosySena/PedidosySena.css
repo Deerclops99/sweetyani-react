@@ -1,0 +1,77 @@
+.pedidos {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.pedidos h1 {
+  text-align: center;
+  color: #e75480;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.pedidos > p {
+  text-align: center;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.pedido-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 28px;
+  margin-bottom: 20px;
+  border-left: 5px solid #e75480;
+  box-shadow: 0 8px 25px rgba(231, 84, 128, 0.08);
+  transition: all 0.3s ease;
+}
+
+.pedido-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(231, 84, 128, 0.15);
+}
+
+.pedido-card h2 {
+  color: #e75480;
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+}
+
+.pedido-card ul {
+  padding-left: 20px;
+}
+
+.pedido-card li {
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.agradecimiento {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e75480;
+}
+
+@media (max-width: 768px) {
+  .pedidos {
+    padding: 15px;
+    margin: 40px auto;
+  }
+
+  .pedidos h1 {
+    font-size: 2rem;
+  }
+
+  .pedido-card {
+    padding: 18px 20px;
+  }
+
+  .pedido-card h2 {
+    font-size: 1.1rem;
+  }
+} 

@@ -1,0 +1,52 @@
+.terminos {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.terminos h1 {
+  text-align: center;
+  color: #e75480;
+  margin-bottom: 20px;
+}
+
+.terminos > p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 35px;
+  line-height: 1.8;
+}
+
+.termino-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  border-left: 5px solid #e75480;
+  box-shadow: 0 8px 25px rgba(231, 84, 128, 0.08);
+  transition: 0.3s;
+}
+
+.termino-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(231, 84, 128, 0.15);
+}
+
+.termino-card h2 {
+  color: #e75480;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.termino-card p {
+  color: #555;
+  line-height: 1.7;
+}
+
+.agradecimiento {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e75480;
+  margin-top: 40px;
+}

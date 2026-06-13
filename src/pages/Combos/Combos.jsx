@@ -1,34 +1,19 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Combos.css";
 
 function Combos() {
-  const [posicion, setPosicion] = useState({
-    top: "50%",
-    left: "50%",
-  });
-
-  const moverBoton = () => {
-    const top = Math.random() * 80;
-    const left = Math.random() * 80;
-
-    setPosicion({
-      top: `${top}%`,
-      left: `${left}%`,
-    });
-  };
-
   return (
-    <div className="combos-page">
-      <h1>🎁 ¡Combo Gratis!</h1>
+    <div className="combos-mantenimiento">
+      <h1>🚧 Página en mantenimiento 🚧</h1>
 
-      <button
-        className="boton-loco"
-        style={posicion}
-        onMouseEnter={moverBoton}
-        onClick={moverBoton}
-      >
-        Combo gratis al dar clic acá
-      </button>
+      <p>
+        Estamos preparando nuevos combos y promociones para ti.
+        Vuelve pronto para descubrir nuestras novedades.
+      </p>
+
+      <Link to="/" className="btn-volver">
+        Volver al Inicio
+      </Link>
     </div>
   );
 }
