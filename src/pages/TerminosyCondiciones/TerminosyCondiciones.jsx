@@ -64,6 +64,15 @@ function TerminosyCondiciones() {
       </div>
 
       <div className="termino-card">
+        <h2>📦 Retiro fuera de la fecha acordada</h2>
+        <p>
+          Sweet Yani queda exonerado de cualquier reclamo relacionado con la calidad, 
+          frescura, presentación o estado del producto cuando este sea retirado después
+           de la fecha acordada.
+        </p>
+      </div>
+
+      <div className="termino-card">
         <h2>✨ Calidad y Compromiso</h2>
         <p>
           Trabajamos con ingredientes seleccionados y elaboramos cada pedido con
