@@ -44,7 +44,7 @@
   margin: 0 15px 18px;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #e63946;
+  color: #d400ca;
 } 
 
 /*la pavada de girar atrás*/
@@ -98,7 +98,7 @@
 
 .card-front p {
   margin: 15px;
-  color: #e63946;
+  color: #ff0256;
   font-size: 1.25rem;
   font-weight: bold;
 }
@@ -118,3 +118,13 @@
   color: #555;
   line-height: 1.6;
 }
+
+.ver-detalles {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f44dfa;
+  cursor: pointer;
+} 

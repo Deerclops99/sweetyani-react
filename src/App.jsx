@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop"; // ajusta ruta si cambia
+
 import Inicio from "./pages/Inicio/Inicio";
 import Productos from "./pages/Productos/Productos";
 import Cotillon from "./pages/Cotillon/Cotillon";
@@ -23,6 +25,8 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
+
+      <ScrollToTop />
 
       <main className="main-content">
         <Routes>

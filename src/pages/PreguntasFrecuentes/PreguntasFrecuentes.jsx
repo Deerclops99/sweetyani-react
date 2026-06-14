@@ -50,7 +50,7 @@ function PreguntasFrecuentes() {
       <div className="faq-item">
         <h3>¿Qué métodos de pago aceptan?</h3>
         <p>
-          Aceptamos <strong>efectivo, transferencia bancaria y Mercado Pago</strong> para mayor comodidad.
+          Aceptamos <strong>efectivo y transferencia bancaria </strong> para mayor comodidad.
         </p>
       </div>
     </section>

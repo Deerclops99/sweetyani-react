@@ -16,12 +16,20 @@ function ProductCard({ nombre, precio, imagen, descripcion }) {
           <img src={`/productos/${imagen}`} alt={nombre} />
           <h3>{nombre}</h3>
           <p>${precio}</p>
+
+          <span className="ver-detalles">
+            Ver detalles →
+          </span>
         </div>
 
         {/* Atrás */}
         <div className="card-back">
           <h3>{nombre}</h3>
           <p>{descripcion}</p>
+
+          <span className="ver-detalles">
+            ← Volver
+          </span>
         </div>
 
       </div>
@@ -29,4 +37,4 @@ function ProductCard({ nombre, precio, imagen, descripcion }) {
   );
 }
 
-export default ProductCard;
+export default ProductCard; 

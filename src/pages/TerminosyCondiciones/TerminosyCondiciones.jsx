@@ -14,7 +14,7 @@ function TerminosyCondiciones() {
       <div className="termino-card">
         <h2>💕 Pedidos</h2>
         <p>
-          Recomendamos realizar los pedidos con al menos <strong>72 horas de
+          Realizar los pedidos con al menos <strong>72 horas de
           anticipación</strong> para garantizar disponibilidad y la calidad que
           nos caracteriza.
         </p>
@@ -32,7 +32,7 @@ function TerminosyCondiciones() {
       <div className="termino-card">
         <h2>💳 Formas de Pago</h2>
         <p>
-          Aceptamos efectivo, transferencia bancaria y Mercado Pago.
+          Aceptamos efectivo y transferencia bancaria.
         </p>
       </div>
 
@@ -46,11 +46,12 @@ function TerminosyCondiciones() {
       </div>
 
       <div className="termino-card">
-        <h2>🚚 Entregas</h2>
+        <h2>🚚 Entregas y Retiros</h2>
         <p>
           Realizamos entregas a domicilio según disponibilidad y zona de
-          cobertura. Los costos y horarios serán coordinados al confirmar el
-          pedido.
+          cobertura. Los costos serán coordinados al confirmar el pedido. 
+          Los horarios de retiro y entrega serán de <strong>lunes a viernes </strong> 
+          de 17 a 21 horas y los <strong>sábados</strong> de 8 a 12 horas. 
         </p>
       </div>
 
