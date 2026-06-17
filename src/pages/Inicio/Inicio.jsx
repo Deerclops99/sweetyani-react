@@ -4,11 +4,11 @@ import "./Inicio.css";
 import { useState, useEffect } from "react";
 
 const imagenes = [
-  "/images/torta1.png",
-  "/images/torta2.png",
-  "/images/torta3.png",
-  "/images/torta4.png",
-  "/images/torta5.png",
+  "/images/torta1.avif",
+  "/images/torta2.avif",
+  "/images/torta3.avif",
+  "/images/torta4.avif",
+  "/images/torta5.avif",
 ];
 
 function Inicio() {
