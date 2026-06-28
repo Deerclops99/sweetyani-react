@@ -1,19 +1,39 @@
-import { Link } from "react-router-dom";
 import "./Cotillon.css";
 
+import { useEffect, useState } from "react";
+import * as XLSX from "xlsx";
+import ProductCard from "../../components/ProductCard/ProductCard";
+
 function Cotillon() {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/productos.xlsx")
+      .then((res) => res.arrayBuffer())
+      .then((ab) => {
+        const workbook = XLSX.read(ab);
+        const hoja = workbook.Sheets[workbook.SheetNames[0]];
+        const datos = XLSX.utils.sheet_to_json(hoja);
+
+        const tortas = datos.filter(
+          (producto) => producto.Categoria === "Cotillon"
+        );
+
+        setProductos(tortas);
+      });
+  }, []);
+
   return (
-    <div className="cotillon-mantenimiento">
-      <h1>🚧 Página en mantenimiento 🚧</h1>
-
-      <p>
-        Estamos preparando nuevos productos y promociones para ti.
-        Vuelve pronto para descubrir nuestras novedades.
-      </p>
-
-      <Link to="/" className="btn-volver">
-        Volver al Inicio
-      </Link>
+    <div className="productos-container">
+      {productos.map((producto, index) => (
+        <ProductCard
+          key={index}
+          nombre={producto.Nombre}
+          precio={producto.Precio}
+          imagen={producto.Imagen}
+          descripcion={producto.Descripcion}
+        />
+      ))}
     </div>
   );
 }
