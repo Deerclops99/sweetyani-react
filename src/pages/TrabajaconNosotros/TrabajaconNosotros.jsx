@@ -12,7 +12,7 @@ function TrabajaconNosotros() {
       </p>
 
       <form
-        action="https://formsubmit.co/vverareinoso@gmail.com"
+        action="https://formsubmit.co/8afc90fec6bcebbad5dd0e786623f8c5"
         method="POST"
         encType="multipart/form-data"
         className="trabaja-form"
