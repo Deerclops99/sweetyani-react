@@ -46,6 +46,8 @@
   background-repeat: no-repeat;
 
   animation: zoomOut 5s linear infinite;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
 }
 
 .hero-content h1 {

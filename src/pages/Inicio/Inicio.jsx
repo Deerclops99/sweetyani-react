@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Inicio.css";
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const imagenes = [
   "/images/torta1.avif",
@@ -13,24 +12,51 @@ const imagenes = [
 
 function Inicio() {
   const [imagenActual, setImagenActual] = useState(0);
+  const [imagenAnterior, setImagenAnterior] = useState(null);
+  const timeoutRef = useRef(null);
 
-useEffect(() => {
-  const intervalo = setInterval(() => {
-    setImagenActual((prev) => (prev + 1) % imagenes.length);
-  }, 5000);
+  // Precargar todas las imágenes al montar
+  useEffect(() => {
+    imagenes.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
-  return () => clearInterval(intervalo);
-}, []);
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setImagenAnterior(imagenActual);
+      setImagenActual((prev) => (prev + 1) % imagenes.length);
+
+      // Limpiar la imagen anterior después de que termine el fade
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        setImagenAnterior(null);
+      }, 1000); // debe coincidir con la duración de la transición en CSS
+    }, 5000);
+
+    return () => {
+      clearInterval(intervalo);
+      clearTimeout(timeoutRef.current);
+    };
+  }, [imagenActual]);
+
   return (
     <div className="inicio">
       {/* Hero Section */}
       <section className="hero">
+        {imagenAnterior !== null && (
+          <div
+            className="hero-slide"
+            style={{ backgroundImage: `url(${imagenes[imagenAnterior]})`, opacity: 0 }}
+          ></div>
+        )}
         <div
-  className="hero-slide active"
-  style={{
-    backgroundImage: `url(${imagenes[imagenActual]})`,
-  }}
-></div>
+          key={imagenActual}
+          className="hero-slide active"
+          style={{ backgroundImage: `url(${imagenes[imagenActual]})` }}
+        ></div>
+
         <div className="hero-content">
           <h1>Tu próxima celebración empieza acá</h1>
           <p>Cada festejo cuenta una historia. Hacelo inolvidable.</p>
