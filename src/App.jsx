@@ -16,6 +16,7 @@ import Local from "./pages/Local/Local";
 import TerminosyCondiciones from "./pages/TerminosyCondiciones/TerminosyCondiciones";
 import PedidosySena from "./pages/PedidosySena/PedidosySena";
 import TrabajaconNosotros from "./pages/TrabajaconNosotros/TrabajaconNosotros";
+import ChatWidget from "./components/ChatWidget";
 
 import Footer from './components/Footer/Footer';
 
@@ -47,9 +48,11 @@ function App() {
           <Route path="/pedidos" element={<PedidosySena />} />
           <Route path="/trabaja" element={<TrabajaconNosotros />} />
         </Routes>
+        
       </main>
 
       <Footer />
+      <ChatWidget />
     </BrowserRouter>
     
   );
