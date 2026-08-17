@@ -27,7 +27,7 @@ export default function Footer() {
     <div className="footer-section">
       <ul>
         <li><a href="https://www.instagram.com/sweetyani.uy/">Instagram</a></li>
-        <li><a href="https://wa.me/59892834333">Whatsapp</a></li>
+        <li><a href="https://wa.me/59891861783">Whatsapp</a></li>
         <li><a href="/menu2026.pdf" download>Descargar Catálogo</a></li>
       </ul>
     </div>

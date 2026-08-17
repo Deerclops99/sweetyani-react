@@ -55,7 +55,7 @@ function NavBar() {
           </li>
 
           <li>
-            <a href="https://wa.me/59892834333">
+            <a href="https://wa.me/59891861783">
               Whatsapp
             </a>
           </li>
