@@ -10,6 +10,33 @@ const imagenes = [
   "/images/torta5.avif",
 ];
 
+const categorias = [
+  {
+    icono: "🧁",
+    nombre: "Mesa Dulce",
+    descripcion: "Mesas dulces para cumpleaños, casamientos y eventos",
+    ruta: "/mesadulce",
+  },
+  {
+    icono: "🎂",
+    nombre: "Tortas",
+    descripcion: "Deliciosas tortas personalizadas",
+    ruta: "/tortas",
+  },
+  {
+    icono: "🏷️",
+    nombre: "Promos",
+    descripcion: "Combos y ofertas especiales con descuentos",
+    ruta: "/promos",
+  },
+  {
+    icono: "📱",
+    nombre: "Apps",
+    descripcion: "Pequeñas apps que resuelven grandes dolores de cabeza",
+    ruta: "/apps",
+  },
+];
+
 function Inicio() {
   const [imagenActual, setImagenActual] = useState(0);
   const [imagenAnterior, setImagenAnterior] = useState(null);
@@ -70,41 +97,22 @@ function Inicio() {
       <section className="categorias">
         <h2>Nuestras Categorías</h2>
         <div className="categorias-grid">
-          <div className="categoria-card">
-            <div className="categoria-icon">🎉</div>
-            <h3>Cotillón</h3>
-            <p>Accesorios y decoraciones para tus fiestas</p>
-            <Link to="/cotillon" className="btn btn-secondary">
-              Ver Más
-            </Link>
-          </div>
-
-          <div className="categoria-card">
-            <div className="categoria-icon">🎁</div>
-            <h3>Regalos</h3>
-            <p>Ideas perfectas para sorprender</p>
-            <Link to="/regalos" className="btn btn-secondary">
-              Ver Más
-            </Link>
-          </div>
-
-          <div className="categoria-card">
-            <div className="categoria-icon">🎂</div>
-            <h3>Tortas</h3>
-            <p>Deliciosas tortas personalizadas</p>
-            <Link to="/tortas" className="btn btn-secondary">
-              Ver Más
-            </Link>
-          </div>
-
-          <div className="categoria-card">
-            <div className="categoria-icon">🎊</div>
-            <h3>Combos</h3>
-            <p>Paquetes especiales con descuentos</p>
-            <Link to="/combos" className="btn btn-secondary">
-              Ver Más
-            </Link>
-          </div>
+          {categorias.map((cat) => (
+            <div className="categoria-card" key={cat.ruta}>
+              <div className="categoria-icon" aria-hidden="true">
+                {cat.icono}
+              </div>
+              <h3>{cat.nombre}</h3>
+              <p>{cat.descripcion}</p>
+              <Link
+                to={cat.ruta}
+                className="btn btn-secondary"
+                aria-label={`Ver más de ${cat.nombre}`}
+              >
+                Ver Más
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -118,7 +126,7 @@ function Inicio() {
           </div>
           <div className="caracteristica">
             <h4>Amplia Variedad</h4>
-            <p>Tortas, regalos, cotillón y mucho más</p>
+            <p>Tortas, mesas dulces, promos y mucho más</p>
           </div>
           <div className="caracteristica">
             <h4>Precios Competitivos</h4>
@@ -126,7 +134,7 @@ function Inicio() {
           </div>
           <div className="caracteristica">
             <h4>Atención Personalizada</h4>
-            <p>Te ayudamos a encontrar el regalo ideal</p>
+            <p>Te ayudamos a armar la celebración ideal</p>
           </div>
         </div>
       </section>

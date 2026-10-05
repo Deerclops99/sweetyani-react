@@ -35,23 +35,21 @@ function NavBar() {
               </li>
 
               <li>
-                <a href="/cotillon">Cotillón</a>
+                <a href="/mesadulce">Mesa dulce</a>
               </li>
 
               <li>
-                <a href="/regalos">Regalos</a>
+                <a href="/promos">Promos</a>
               </li>
             </ul>
           </li>
 
           <li>
-            <a href="/combos">Combos</a>
+            <a href="/apps">Apps</a>
           </li>
 
           <li>
-            <a href="/preguntas-frecuentes">
-              Preguntas frecuentes
-            </a>
+            <a href="/recetas">Recetas</a>
           </li>
 
           <li>

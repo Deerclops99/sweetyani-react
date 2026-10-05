@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import "./Combos.css";
+import "./Apps.css";
 
-function Combos() {
+function Apps() {
   return (
-    <div className="combos-mantenimiento">
+    <div className="apps-mantenimiento">
       <h1>🚧 Página en mantenimiento 🚧</h1>
 
       <p>
-        Estamos preparando nuevos combos y promociones para ti.
+        Estamos creando nuevas apps y promociones para ti.
         Vuelve pronto para descubrir nuestras novedades.
       </p>
 
@@ -18,4 +18,4 @@ function Combos() {
   );
 }
 
-export default Combos;
+export default Apps;

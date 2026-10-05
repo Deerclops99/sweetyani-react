@@ -1,4 +1,4 @@
-.combos-mantenimiento {
+.apps-mantenimiento {
   min-height: 70vh;
   display: flex;
   flex-direction: column;
@@ -9,12 +9,12 @@
   padding: 20px;
 }
 
-.combos-mantenimiento h1 {
+.apps-mantenimiento h1 {
   color: #e75480;
   font-size: 2.5rem;
 }
 
-.combos-mantenimiento p {
+.apps-mantenimiento p {
   max-width: 600px;
   color: #555;
   font-size: 1.1rem;

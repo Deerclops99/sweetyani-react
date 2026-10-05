@@ -6,17 +6,19 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop"; // ajusta ruta s
 
 import Inicio from "./pages/Inicio/Inicio";
 import Productos from "./pages/Productos/Productos";
-import Cotillon from "./pages/Cotillon/Cotillon";
-import Regalos from "./pages/Regalos/Regalos";
+import MesaDulce from "./pages/MesaDulce/MesaDulce";
+import Promos from "./pages/Promos/Promos";
 import Tortas from "./pages/Tortas/Tortas";
-import Combos from "./pages/Combos/Combos";
+import Apps from "./pages/Apps/Apps";
 import PreguntasFrecuentes from "./pages/PreguntasFrecuentes/PreguntasFrecuentes";
 import Nosotros from "./pages/Nosotros/Nosotros";
 import Local from "./pages/Local/Local";
-import TerminosyCondiciones from "./pages/TerminosyCondiciones/TerminosyCondiciones";
+import PoliticaPrivacidad from "./pages/PoliticaPrivacidad/PoliticaPrivacidad";
 import PedidosySena from "./pages/PedidosySena/PedidosySena";
 import TrabajaconNosotros from "./pages/TrabajaconNosotros/TrabajaconNosotros";
 import ChatWidget from "./components/ChatWidget";
+import Recetas from "./pages/Recetas/Recetas";
+
 
 import Footer from './components/Footer/Footer';
 
@@ -33,18 +35,19 @@ function App() {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/productos" element={<Productos />} />
-          <Route path="/cotillon" element={<Cotillon />} />
-          <Route path="/regalos" element={<Regalos />} />
+          <Route path="/mesadulce" element={<MesaDulce />} />
+          <Route path="/promos" element={<Promos />} />
           <Route path="/tortas" element={<Tortas />} />
-          <Route path="/combos" element={<Combos />} />
+          <Route path="/apps" element={<Apps />} />
           <Route
             path="/preguntas-frecuentes"
             element={<PreguntasFrecuentes />}
 
           />
           <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/recetas" element={<Recetas />} />
           <Route path="/local" element={<Local />} />
-          <Route path="/terminos" element={<TerminosyCondiciones />} />
+          <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/pedidos" element={<PedidosySena />} />
           <Route path="/trabaja" element={<TrabajaconNosotros />} />
         </Routes>

@@ -18,7 +18,7 @@ export default function Footer() {
 
     <div className="footer-section">
       <ul>
-        <li><a href="terminos">Términos y condiciones</a></li>
+        <li><a href="politica-privacidad">Política de privacidad</a></li>
         <li><a href="pedidos">Pedidos y seña</a></li>
         <li><a href="trabaja">Trabajá con nosotros</a></li>
       </ul>

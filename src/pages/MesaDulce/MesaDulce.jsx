@@ -1,10 +1,10 @@
-import "./Regalos.css";
+import "./MesaDulce.css";
 
 import { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
 import ProductCard from "../../components/ProductCard/ProductCard";
 
-function Regalos() {
+function MesaDulce() {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Regalos() {
         const datos = XLSX.utils.sheet_to_json(hoja);
 
         const tortas = datos.filter(
-          (producto) => producto.Categoria === "Regalos"
+          (producto) => producto.Categoria === "MesaDulce"
         );
 
         setProductos(tortas);
@@ -38,4 +38,4 @@ function Regalos() {
   );
 }
 
-export default Regalos;
+export default MesaDulce;

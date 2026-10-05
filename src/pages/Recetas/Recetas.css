@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap");
+
+.recetas {
+  --rosa: #d6006f;
+  --rosa-suave: #ffc2df;
+  --vino: #4a1632;
+  --texto: #5b3447;
+
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 56px 20px 80px;
+  color: var(--texto);
+  box-sizing: border-box;
+}
+
+.recetas *,
+.recetas *::before,
+.recetas *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Encabezado ---------- */
+
+.recetas__intro {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.recetas__intro h1 {
+  margin: 0 0 16px;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  line-height: 1.1;
+  color: var(--rosa);
+}
+
+.recetas__intro p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ---------- Grilla ---------- */
+
+.recetas__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+/* ---------- Tarjeta ---------- */
+
+.receta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--rosa-suave);
+  border-radius: 22px;
+  box-shadow: 0 10px 24px -14px rgba(214, 0, 111, 0.35);
+  scroll-margin-top: 110px;
+}
+
+.receta__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 130px;
+  background: var(--tono);
+}
+
+.receta__tile span {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.receta__main {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 22px 24px;
+}
+
+.receta h2 {
+  margin: 0 0 8px;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--vino);
+}
+
+.receta__desc {
+  margin: 0 0 16px;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* ---------- Datos rápidos ---------- */
+
+.receta__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.receta__meta li {
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--vino);
+  background: var(--tono);
+  border-radius: 999px;
+}
+
+/* ---------- Detalle desplegable ---------- */
+
+.receta__detalle summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--rosa);
+  background: #fff;
+  border: 2px solid var(--rosa);
+  border-radius: 10px;
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.receta__detalle summary::-webkit-details-marker {
+  display: none;
+}
+
+.receta__detalle summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.2s;
+}
+
+.receta__detalle[open] summary::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+.receta__detalle summary:hover {
+  color: #fff;
+  background: var(--rosa);
+}
+
+.receta__detalle summary:focus-visible,
+.receta__pedir:focus-visible {
+  outline: 3px solid var(--vino);
+  outline-offset: 3px;
+}
+
+/* ---------- Contenido de la receta ---------- */
+
+.receta__cuerpo {
+  padding-top: 24px;
+}
+
+.receta__cuerpo h3 {
+  margin: 0 0 12px;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--rosa);
+}
+
+.receta__cuerpo h3:not(:first-child) {
+  margin-top: 26px;
+}
+
+.receta__grupo + .receta__grupo {
+  margin-top: 14px;
+}
+
+.receta__grupo h4 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--vino);
+}
+
+.receta__grupo ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.receta__grupo li {
+  margin-bottom: 4px;
+  font-size: 0.97rem;
+  line-height: 1.5;
+}
+
+.receta__grupo li::marker {
+  color: var(--rosa);
+}
+
+/* Los pasos sí son una secuencia, por eso van numerados */
+.receta__pasos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: paso;
+}
+
+.receta__pasos li {
+  position: relative;
+  min-height: 30px;
+  margin-bottom: 14px;
+  padding-left: 42px;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  counter-increment: paso;
+}
+
+.receta__pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  background: var(--rosa);
+  border-radius: 50%;
+}
+
+.receta__truco {
+  margin: 22px 0;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background: var(--tono);
+  border-radius: 12px;
+}
+
+.receta__pedir {
+  display: block;
+  padding: 13px 18px;
+  font-weight: 700;
+  font-size: 0.97rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: var(--rosa);
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.receta__pedir:hover {
+  background: var(--vino);
+}
+
+/* ---------- Apertura suave (solo si el navegador lo permite) ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .receta__detalle[open] .receta__cuerpo {
+    animation: receta-abrir 0.3s ease;
+  }
+}
+
+@keyframes receta-abrir {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Celular ---------- */
+
+@media (max-width: 480px) {
+  .recetas {
+    padding: 36px 16px 56px;
+  }
+
+  .recetas__grid {
+    grid-template-columns: 1fr;
+  }
+}

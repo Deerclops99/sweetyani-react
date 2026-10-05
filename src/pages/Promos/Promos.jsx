@@ -1,10 +1,10 @@
-import "./Cotillon.css";
+import "./Promos.css";
 
 import { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
 import ProductCard from "../../components/ProductCard/ProductCard";
 
-function Cotillon() {
+function Promos() {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Cotillon() {
         const datos = XLSX.utils.sheet_to_json(hoja);
 
         const tortas = datos.filter(
-          (producto) => producto.Categoria === "Cotillon"
+          (producto) => producto.Categoria === "Promos"
         );
 
         setProductos(tortas);
@@ -38,4 +38,4 @@ function Cotillon() {
   );
 }
 
-export default Cotillon;
+export default Promos;

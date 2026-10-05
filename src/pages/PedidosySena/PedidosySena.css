@@ -39,7 +39,14 @@
   font-size: 1.25rem;
 }
 
+.pedido-card p {
+  margin: 0;
+  color: #555;
+  line-height: 1.7;
+}
+
 .pedido-card ul {
+  margin: 0;
   padding-left: 20px;
 }
 
@@ -49,12 +56,69 @@
   line-height: 1.7;
 }
 
+.pedido-card li:last-child {
+  margin-bottom: 0;
+}
+
+.pedido-card li::marker {
+  color: #e75480;
+}
+
+/* Horarios de entrega y retiro */
+
+.horarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.horario {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 18px;
+  background: #fff0f5;
+  border-radius: 14px;
+}
+
+.horario span {
+  font-size: 0.9rem;
+  color: #8a5568;
+}
+
+.horario strong {
+  font-size: 1.1rem;
+  color: #e75480;
+}
+
+/* Aviso importante: se distingue con fondo suave */
+
+.pedido-card--aviso {
+  background: #fff7fa;
+  border-left-color: #b8284f;
+}
+
+.pedido-card--aviso h2 {
+  color: #b8284f;
+}
+
 .agradecimiento {
   text-align: center;
   margin-top: 40px;
   font-size: 1.1rem;
   font-weight: 600;
   color: #e75480;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pedido-card {
+    transition: none;
+  }
+
+  .pedido-card:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -74,4 +138,4 @@
   .pedido-card h2 {
     font-size: 1.1rem;
   }
-} 
+}
