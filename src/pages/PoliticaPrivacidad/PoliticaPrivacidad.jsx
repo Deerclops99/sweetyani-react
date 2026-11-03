@@ -1,7 +1,7 @@
 import "./PoliticaPrivacidad.css";
 
 const EMAIL = "vverareinoso@gmail.com";
-const ULTIMA_ACTUALIZACION = "4 de octubre de 2026";
+const ULTIMA_ACTUALIZACION = "3 de noviembre de 2026";
 
 function PoliticaPrivacidad() {
   return (
