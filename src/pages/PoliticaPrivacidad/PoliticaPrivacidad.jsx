@@ -70,6 +70,15 @@ function PoliticaPrivacidad() {
             borrarlos desinstalando la app o eliminando sus datos desde los
             ajustes de Android.
           </li>
+          <li>
+            Mis Notas: las notas que escribís se guardan únicamente en tu 
+            dispositivo. No las enviamos a ningún servidor, no las
+             vemos y no las compartimos con nadie. Si desinstalás
+              la app o borrás sus datos desde los ajustes de 
+              Android, tus notas se eliminan. Los únicos datos 
+              que salen de tu dispositivo son los que recopilan
+               automáticamente los servicios de anuncios de Google AdMob.
+          </li>
         </ul>
       </div>
 
