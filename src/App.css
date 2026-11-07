@@ -46,22 +46,15 @@ img {
    (NO afecta Header ni Footer)
    ========================= */
 
-.main-content {
-  flex: 1;
-  background-color: #ffc56f; /* Rosa pastel claro */
-}
-
 .murcielago {
   position: fixed;
-  bottom: 0;      /* ancla abajo (en vez de top: 85vh) */
+  bottom: 0;
   right: 0;
-  width: 140px;
+  width: 190px;
   z-index: 50;
   pointer-events: none;
   animation: cruzar 14s linear infinite;
 }
-
-
 
 .murcielago-vaiven {
   animation: vaiven 2.5s ease-in-out infinite;
@@ -70,30 +63,21 @@ img {
 .murcielago svg {
   width: 100%;
   height: auto;
-  fill: #1a1a1a;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   overflow: visible;
-}
-
-/* aleteo */
-.ala {
-  transform-origin: 50px 28px;
-  animation: aletear 0.25s ease-in-out infinite alternate;
-}
-
-.ala-der {
-  animation-delay: 0s;
-}
-
-@keyframes aletear {
-  from { transform: scaleY(1) rotate(0deg); }
-  to   { transform: scaleY(0.35) rotate(8deg); }
 }
 
 /* sube y baja mientras avanza */
 @keyframes vaiven {
-  0%, 100% { transform: translateY(0) rotate(-4deg); }
-  50%      { transform: translateY(40px) rotate(4deg); }
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(40px) rotate(4deg);
+  }
 }
 
 /* cruza la pantalla y espera fuera de vista antes de volver */
@@ -101,16 +85,20 @@ img {
   0% {
     transform: translate(150px, 0);
   }
+
   70% {
     transform: translate(calc(-100vw - 150px), calc(-100vh - 100px));
   }
+
   100% {
     transform: translate(calc(-100vw - 150px), calc(-100vh - 100px));
   }
 }
 
 @media (max-width: 768px) {
-  .murcielago { width: 60px; }
+  .murcielago {
+    width: 110px;
+  }
 }
 
 .telarana {
@@ -120,23 +108,44 @@ img {
   z-index: 40;
   pointer-events: none;
   fill: none;
-  stroke: rgba(255, 255, 255, 0.85);
-  stroke-width: 0.8;
-  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
+  stroke: #7fb9e8;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 2px rgba(60, 130, 200, 0.4));
+  animation: girar 10s linear infinite;
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  60% {
+    transform: rotate(360deg);
+  }
+
+  /* gira durante 1s */
+  100% {
+    transform: rotate(360deg);
+  }
+
+  /* quieto los 4s restantes */
 }
 
 /* superior derecha: espejada horizontalmente */
 .telarana-sup-der {
   top: 0;
   right: 0;
-  transform: scaleX(-1);
 }
 
 /* inferior izquierda: espejada verticalmente */
 .telarana-inf-izq {
   bottom: 0;
   left: 0;
-  transform: scaleY(-1);
+}
+
+.telarana-inf-izq {
+  animation-direction: reverse;
 }
 
 @media (max-width: 768px) {
@@ -144,4 +153,58 @@ img {
     width: 110px;
     height: 110px;
   }
+}
+
+/* ===== Nieve ligera ===== */
+.nieve,
+.nieve::before,
+.nieve::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* capa 1: copos chicos, caen lento (lejos) */
+.nieve {
+  z-index: 30;
+  background-image:
+    radial-gradient(circle at 30px 40px,   rgba(150, 200, 240, 0.7) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 150px 120px, rgba(150, 200, 240, 0.7) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 270px 60px,  rgba(150, 200, 240, 0.7) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 90px 250px,  rgba(150, 200, 240, 0.7) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 330px 300px, rgba(150, 200, 240, 0.7) 1.5px, transparent 2.5px);
+  background-size: 400px 400px;
+  animation: nieve-cae-1 20s linear infinite;
+}
+
+/* capa 2: copos medianos */
+.nieve::before {
+  background-image:
+    radial-gradient(circle at 60px 80px,   rgba(120, 180, 235, 0.75) 2.5px, transparent 3.5px),
+    radial-gradient(circle at 200px 200px, rgba(120, 180, 235, 0.75) 2.5px, transparent 3.5px),
+    radial-gradient(circle at 120px 30px,  rgba(120, 180, 235, 0.75) 2px, transparent 3px);
+  background-size: 300px 300px;
+  animation: nieve-cae-2 13s linear infinite;
+}
+
+/* capa 3: pocos copos grandes, caen más rápido (cerca) */
+.nieve::after {
+  background-image:
+    radial-gradient(circle at 100px 150px, rgba(100, 165, 230, 0.8) 3.5px, transparent 4.5px),
+    radial-gradient(circle at 380px 420px, rgba(100, 165, 230, 0.8) 3px, transparent 4px);
+  background-size: 500px 500px;
+  animation: nieve-cae-3 9s linear infinite;
+}
+
+/* el desplazamiento es igual al tamaño del tile, así el loop no se corta */
+@keyframes nieve-cae-1 { to { background-position: 0 400px; } }
+@keyframes nieve-cae-2 { to { background-position: 0 300px; } }
+@keyframes nieve-cae-3 { to { background-position: 0 500px; } }
+
+/* respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .nieve,
+  .nieve::before,
+  .nieve::after { animation: none; }
 }
